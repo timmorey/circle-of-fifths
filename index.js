@@ -44,7 +44,7 @@ function render(canvas) {
 }
 
 function setFont(context, size, bold = false) {
-  context.font = `${bold ? '800' : '300'} ${size}px sans-serif`
+  context.font = `${bold ? '800' : '300'} ${size}px monospace`
 }
 
 function drawCircle(context, cx, cy, r, fillStyle = 'rgb(255,255,255)') {
@@ -111,16 +111,16 @@ class Cell {
 // }
 
 const keys = [
-  [ 'A', 'B', 'C#', 'D', 'E', 'F#', 'G#' ],
-  [ 'Bb', 'C', 'D', 'Eb', 'F', 'G', 'A' ],
-  [ 'B', 'C#', 'D#', 'E', 'F#', 'G#', 'A#' ],
+  [ 'A', 'B', 'C♯', 'D', 'E', 'F♯', 'G♯' ],
+  [ 'B♭', 'C', 'D', 'E♭', 'F', 'G', 'A' ],
+  [ 'B', 'C♯', 'D♯', 'E', 'F♯', 'G♯', 'A♯' ],
   [ 'C', 'D', 'E', 'F', 'G', 'A', 'B' ],
-  [ 'Db', 'Eb', 'F', 'Gb', 'Ab', 'Bb', 'C' ],
-  [ 'D', 'E', 'F#', 'G', 'A', 'B', 'C#' ],
-  [ 'Eb', 'F', 'G', 'Ab', 'Bb', 'C', 'D' ],
-  [ 'E', 'F#', 'G#', 'A', 'B', 'C#', 'D#' ],
-  [ 'F', 'G', 'A', 'Bb', 'C', 'D', 'E' ],
-  [ 'Gb', 'Ab', 'Bb', 'Cb', 'Db', 'Eb', 'F' ],
-  [ 'G', 'A', 'B', 'C', 'D', 'E', 'F#' ],
-  [ 'Ab', 'Bb', 'C', 'Db', 'Eb', 'F', 'G' ],
+  [ 'D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C' ],
+  [ 'D', 'E', 'F♯', 'G', 'A', 'B', 'C♯' ],
+  [ 'E♭', 'F', 'G', 'A♭', 'B♭', 'C', 'D' ],
+  [ 'E', 'F♯', 'G♯', 'A', 'B', 'C♯', 'D♯' ],
+  [ 'F', 'G', 'A', 'B♭', 'C', 'D', 'E' ],
+  [ 'G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F' ],
+  [ 'G', 'A', 'B', 'C', 'D', 'E', 'F♯' ],
+  [ 'A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G' ],
 ]
