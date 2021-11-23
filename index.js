@@ -16,9 +16,10 @@ function render(canvas) {
   const size = Math.min(canvas.clientWidth, canvas.clientHeight) - 1
   const r = size / 2
   const cells = computeCells(r)
-  drawCircle(context, cx, cy, r)
+  drawCircle(context, cx, cy, r, 'rgb(222,222,222)')
   for (let i = 0; i < cells[0].length; i++) {
-    drawCircle(context, cx, cy, cells[0][i].rMin)
+    const fill = i === 4 ? 'rgb(222,222,222)' : undefined
+    drawCircle(context, cx, cy, cells[0][i].rMin, fill)
   }
   for (let i = 0; i < cells.length; i++) {
     const theta = cells[i][0].thetaMin
@@ -46,14 +47,16 @@ function setFont(context, size, bold = false) {
   context.font = `${bold ? '800' : '300'} ${size}px sans-serif`
 }
 
-function drawCircle(context, cx, cy, r) {
+function drawCircle(context, cx, cy, r, fillStyle = 'rgb(255,255,255)') {
   context.save()
   context.strokeStyle = 'rgb(0,0,0)'
+  context.fillStyle = fillStyle
   context.strokeWidth = 1
   context.beginPath()
   context.arc(cx, cy, r, 0, Math.PI * 2)
   context.closePath()
   context.stroke()
+  context.fill()
   context.restore()
 }
 
